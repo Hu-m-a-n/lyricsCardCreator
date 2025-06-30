@@ -1,4 +1,4 @@
-# lyricsToImage
+# lyricsCardCreator
 
 가사를 입력하면 가사 이미지 카드를 생성해주는 웹사이트입니다.
 
