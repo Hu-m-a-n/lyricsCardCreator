@@ -4,7 +4,7 @@
 
 - 예시 이미지
 <p align="center">
-  <img width="460" height="300" src="https://raw.githubusercontent.com/Hu-m-a-n/lyricsCardCreator/refs/heads/main/lyrics-card%20(14).png">
+  <img width="300" height="300" src="https://raw.githubusercontent.com/Hu-m-a-n/lyricsCardCreator/refs/heads/main/lyrics-card%20(14).png">
 </p>
 
 ## 주요 기능
