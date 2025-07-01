@@ -153,6 +153,12 @@ button:hover {
     white-space: pre-wrap;
     margin: 0;
     line-height: 1.6;
+    overflow: auto;
+    scrollbar-width: none;        /* Firefox */
+    -ms-overflow-style: none;     /* IE, Edge */
+}
+#lyrics-preview::-webkit-scrollbar {
+    display: none;                /* Chrome, Safari, Opera */
 }
 
 /* 정렬 클래스 */
