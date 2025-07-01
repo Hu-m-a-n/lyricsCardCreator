@@ -2,6 +2,10 @@
 
 가사를 입력하면 가사 이미지 카드를 생성해주는 웹사이트입니다.
 
+<p align="center">
+  <img width="460" height="300" src="https://raw.githubusercontent.com/Hu-m-a-n/lyricsCardCreator/refs/heads/main/lyrics-card%20(14).png">
+</p>
+
 ## 주요 기능
 
 - 사용자가 입력한 가사를 이미지(가사 카드)로 변환
