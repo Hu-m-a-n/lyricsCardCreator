@@ -97,12 +97,14 @@ button:hover {
 }
 
 #capture-area {
-    width: 500px;
-    height: 500px;
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 1 / 1;
+    min-height: 500px;
     background-color: #000;
     color: white;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     border-radius: 10px;
     display: flex;
@@ -131,7 +133,6 @@ button:hover {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    overflow: auto;
 }
 
 #song-title-preview {
@@ -153,12 +154,6 @@ button:hover {
     white-space: pre-wrap;
     margin: 0;
     line-height: 1.6;
-    overflow: auto;
-    scrollbar-width: none;        /* Firefox */
-    -ms-overflow-style: none;     /* IE, Edge */
-}
-#lyrics-preview::-webkit-scrollbar {
-    display: none;                /* Chrome, Safari, Opera */
 }
 
 /* 정렬 클래스 */

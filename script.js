@@ -21,6 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const lyricsSizeSelect = document.getElementById('lyrics-size-select');
     const textContent = document.querySelector('#capture-area .text-content');
 
+    const lyricsWarning = document.getElementById('lyrics-warning');
+
     // 제목 미리보기 업데이트
     titleInput.addEventListener('input', () => {
         titlePreview.textContent = titleInput.value || '노래 제목';
@@ -36,6 +38,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // 가사 미리보기 업데이트
     lyricsInput.addEventListener('input', () => {
         lyricsPreview.textContent = lyricsInput.value || '노래 가사';
+        const lines = lyricsInput.value.split(/\r?\n/);
+        if (lines.length > 8) {
+            lyricsWarning.style.display = 'block';
+        } else {
+            lyricsWarning.style.display = 'none';
+        }
     });
 
     // 앨범 커버 미리보기 (파일 업로드)
