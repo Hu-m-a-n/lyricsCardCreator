@@ -8,12 +8,12 @@
 body {
     font-family: 'Pretendard-Regular', sans-serif;
     display: flex;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     min-height: 100vh;
     margin: 0;
     background-color: #f0f0f0;
-    padding: 20px;
-    gap: 20px;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -25,8 +25,9 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    width: 350px;
-    flex-shrink: 0;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 h1 {
@@ -89,18 +90,17 @@ button:hover {
 }
 
 .preview-container {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+    width: 100%;
+    padding: 0;
+    display: block;
+    margin-bottom: 15px;
 }
 
 #capture-area {
     width: 100%;
     max-width: 500px;
     aspect-ratio: 1 / 1;
-    min-height: 500px;
+    min-height: unset;
     background-color: #000;
     color: white;
     position: relative;
@@ -122,6 +122,7 @@ button:hover {
     object-fit: cover;
     opacity: 0.3;
     z-index: 1;
+    border-radius: 10px;
 }
 
 .text-content {

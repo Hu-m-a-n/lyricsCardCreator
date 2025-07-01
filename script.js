@@ -47,30 +47,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // 앨범 커버 미리보기 (파일 업로드)
-    coverInput.addEventListener('change', (event) => {
-        const file = event.target.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = (e) => {
-                coverPreview.src = e.target.result;
-            };
-            reader.readAsDataURL(file);
-            // 파일 업로드 시 URL 입력란 초기화
-            coverUrlInput.value = '';
-        }
-    });
+    if (coverInput && coverPreview) {
+        coverInput.addEventListener('change', function() {
+            const file = coverInput.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    coverPreview.src = e.target.result;
+                    coverPreview.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            } else {
+                coverPreview.style.display = 'none';
+            }
+        });
+    }
 
     // 앨범 커버 미리보기 (URL 입력)
-    coverUrlInput.addEventListener('input', () => {
-        const url = coverUrlInput.value.trim();
-        if (url) {
-            coverPreview.src = url;
-            // URL 입력 시 파일 업로드 input 초기화
-            coverInput.value = '';
-        } else {
-            coverPreview.src = 'https://via.placeholder.com/500';
-        }
-    });
+    if (coverUrlInput && coverPreview) {
+        coverUrlInput.addEventListener('input', function() {
+            if (coverUrlInput.value.trim()) {
+                coverPreview.src = coverUrlInput.value.trim();
+                coverPreview.style.display = 'block';
+            } else {
+                coverPreview.style.display = 'none';
+            }
+        });
+    }
 
     // 이미지 내보내기
     exportButton.addEventListener('click', () => {
@@ -139,6 +142,13 @@ document.addEventListener('DOMContentLoaded', () => {
         descPreview.textContent = `${artist}의 ${title} 中..`;
     }
 
+    function updateDescPreview() {
+        const artist = artistInput.value.trim() || '아티스트';
+        const title = titleInput.value.trim() || '노래 제목';
+        descPreview.textContent = `${artist}의 ${title} 中..`;
+        descPreview.style.display = 'block';
+    }
+
     // 초기값 적용
     applyCustomStyles();
     updateDesc();
@@ -148,4 +158,11 @@ document.addEventListener('DOMContentLoaded', () => {
     titleSizeSelect.addEventListener('change', applyCustomStyles);
     lyricsAlignSelect.addEventListener('change', applyCustomStyles);
     lyricsSizeSelect.addEventListener('change', applyCustomStyles);
+
+    if (titleInput && artistInput && descPreview) {
+        titleInput.addEventListener('input', updateDescPreview);
+        artistInput.addEventListener('input', updateDescPreview);
+        // 최초 1회 기본값 표시
+        updateDescPreview();
+    }
 }); 

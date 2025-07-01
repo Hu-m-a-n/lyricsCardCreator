@@ -8,6 +8,17 @@
 </head>
 <body>
     <div class="controls">
+        <div class="preview-container">
+            <div id="capture-area">
+                <img id="album-cover-preview" src="" alt="앨범 커버 미리보기" style="display:none;" />
+                <div class="text-content">
+                    <div id="song-title-preview">노래 제목</div>
+                    <div id="artist-name-preview">아티스트</div>
+                    <div id="lyrics-preview">노래 가사</div>
+                </div>
+                <div class="desc-preview" id="desc-preview" style="display:none;"></div>
+            </div>
+        </div>
         <h1>가사 이미지 생성기</h1>
         <label for="title-align-select">제목/아티스트 정렬:</label>
         <select id="title-align-select">
@@ -39,18 +50,6 @@
         <label for="cover-input" class="file-label">앨범 커버 선택</label>
         <input type="file" id="cover-input" accept="image/*">
         <button id="export-button">이미지 파일로 내보내기</button>
-    </div>
-
-    <div class="preview-container">
-        <div id="capture-area">
-            <img id="album-cover-preview" src="https://via.placeholder.com/500" alt="앨범 커버">
-            <div class="text-content">
-                <h2 id="song-title-preview">노래 제목</h2>
-                <h3 id="artist-name-preview">아티스트</h3>
-                <p id="lyrics-preview">노래 가사</p>
-            </div>
-            <p id="desc-preview" class="desc-preview"></p>
-        </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html-to-image/1.11.11/html-to-image.min.js"></script>
